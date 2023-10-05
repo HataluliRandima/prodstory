@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :prodstory, Prodstory.Repo,
   username: "postgres",
-  password: "Hata@randima.00",
+  password: "123456",
   hostname: "localhost",
   database: "prodstory_dev",
   stacktrace: true,
