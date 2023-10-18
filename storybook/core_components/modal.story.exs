@@ -24,7 +24,7 @@ defmodule Storybook.CoreComponents.Modal do
         id: :with_title_and_subtitle,
         slots: [
           "<:title>Title</:title>",
-          "<:subtitle>Subtitle</:subtitle>",
+          "<:subtitle>Hello</:subtitle>",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         ]
       },
