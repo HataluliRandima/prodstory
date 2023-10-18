@@ -209,17 +209,105 @@ defmodule ProdstoryWeb.CoreComponents do
   @doc """
   Renders a button.
 
-  ## Examples
+  ## Example styling
 
-      <.button>Send!</.button>
-      <.button phx-click="go" class="ml-2">Send!</.button>
+      Default button:
+    .button-default {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+      Button Pills:
+    .button-pills {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      text-align: center;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      outline: none;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .button-pills:hover {
+      background-color: #0056b3;
+    }
+
+    .button-pills:focus {
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+
+
+      Social button:
+    .social-button {
+      background-color: #24292F;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      outline: none;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .social-button:hover {
+      background-color: rgba(36, 41, 47, 0.9);
+    }
+
+    .social-button:focus {
+      box-shadow: 0 0 0 4px rgba(36, 41, 47, 0.5);
+    }
+
+
+      Icon button:
+    .icon-button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      border-radius: 50%;
+      font-size: 0.875rem;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 0.5rem;
+      outline: none;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    .icon-button:hover {
+      background-color: #0056b3;
+    }
+
+    .icon-button:focus {
+      box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+    }
   """
   attr :type, :string, default: nil
   attr :class, :string, default: nil
   attr :rest, :global, include: ~w(disabled form name value)
+  # attr :icon, :string, default: nil
 
   slot :inner_block, required: true
 
+  # <i class="fa fa-github"></i>
   def button(assigns) do
     ~H"""
     <button

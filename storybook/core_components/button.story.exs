@@ -7,21 +7,33 @@ defmodule Storybook.CoreComponents.Button do
     [
       %Variation{
         id: :default,
-        slots: ["Button"]
+        slots: [
+          "Button"
+        ],
+        attributes: %{
+          class: "button-default"
+        },
       },
       %Variation{
-        id: :custom_class,
+        id: :button_pills,
         attributes: %{
-          class: "rounded-full bg-indigo-500 hover:bg-indigo-600"
+          class: "button-pills"
         },
-        slots: ["Disabled"]
+        slots: ["Button Pill"]
       },
       %Variation{
-        id: :disabled,
+        id: :social_button,
         attributes: %{
-          disabled: true
+          class: "social-button fa-brands fa-github"
         },
-        slots: ["Disabled"]
+        slots: ["Sign in to Github"]
+      },
+      %Variation{
+        id: :icon_button,
+        attributes: %{
+          class: "icon-button fa-solid fa-arrow-right"
+        },
+        slots: [""]
       }
     ]
   end
